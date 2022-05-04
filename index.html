@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        hello-world {
+            font-weight: bold;
+            color: red;
+        }
+
+        /* p {
+            font-weight: bold;
+            color: red;
+        } */
+    </style>
+</head>
+<body>
+    <button>change name</button>
+    <!-- 5. HTML template  -->
+    <!-- <template id="hello-world">
+        <style>
+          p {
+            text-align: center;
+            font-weight: normal;
+            padding: 0.5em;
+            margin: 1px 0;
+            background-color: #eee;
+            border: 1px solid #666;
+          }
+        </style>
+      
+        <p class="hw-text"></p>
+        <p class="hw-text"></p>
+        <p class="hw-text"></p>
+    </template> -->
+
+    <hello-world name="Ruei!"></hello-world>
+    <script src="./vanilla.ce.js"></script>
+    <script>
+        // 3. 可以靠 JS 控制屬性影響畫面
+        const btn = document.querySelector('button')
+        btn.addEventListener('click', () => {
+            document.querySelector('hello-world').setAttribute('name', 'Everyone!');
+        })
+    </script>
+</body>
+</html>
