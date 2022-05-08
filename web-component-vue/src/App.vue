@@ -1,11 +1,8 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
 
 <template>
   <main>
     <my-vue-custom-els></my-vue-custom-els>
+      <hello-world name="Ruei!"></hello-world>
   </main>
 </template>
 

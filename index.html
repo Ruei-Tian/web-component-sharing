@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        /* 4-1 shadow root mount 後外部只能控制根節點的樣式，無法影響 web component 內的樣式了 */
         hello-world {
             font-weight: bold;
             color: red;
@@ -38,12 +39,20 @@
     </template> -->
 
     <hello-world name="Ruei!"></hello-world>
+    <my-vue-custom-els></my-vue-custom-els>
     <script src="./vanilla.ce.js"></script>
+    <script src="./web-component-vue/dist/CustomEls.es.js"></script>
+
     <script>
-        // 3. 可以靠 JS 控制屬性影響畫面
+        // 3. 在 shadow root 尚未開啟前，可以靠 JS 控制屬性影響畫面
         const btn = document.querySelector('button')
         btn.addEventListener('click', () => {
             document.querySelector('hello-world').setAttribute('name', 'Everyone!');
+        })
+
+        // 6-1. 在外部監聽 web component 內定義的客製化事件
+        window.addEventListener('customEvent', (e) => {
+            console.log(e.detail.info);
         })
     </script>
 </body>

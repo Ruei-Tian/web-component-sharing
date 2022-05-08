@@ -1,6 +1,6 @@
 <template>
     <div class="my-vue-custom-els">
-        <h1>My Web Component By Vue!</h1>
+        <p>My Web Component By Vue!</p>
     </div>
 </template>
 
